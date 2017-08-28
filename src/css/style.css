@@ -1,0 +1,21 @@
+body {
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    background:#ffffff;
+    font-size:14px;
+    color:#5e5e5e;
+    min-width:960px;
+}
+
+/*.login_back {width:320px; height:257px; background:url(../images/login_back_03.png) no-repeat bottom; padding:40px;}*/
+.login_c {width:320px;}
+.login_email {font-size:15px;  font-family:'CabinRegular';}
+.citata {font-size:15px; color:#808080;  font-family:'CabinRegular';}
+.oval_blok { width:320px; height:30px; position:relative;}
+.oval_1 {height:30px; width:320px; line-height:30px; display:inline-block; float:leftt; font-size:14px; color:#808080;  font-family:'CabinMedium'; border-radius: 15px; background:#ebebeb; text-align:left; border:none;  -moz-border-radius:15px;
+    -webkit-border-radius:15px;}
+.but_send {font-size:15px; color:#ffffff; float:left; height:30px; background:#56c941; border-radius: 15px; font-family:'CabinMedium';
+    display:block; line-height:30px; border:none;  -moz-border-radius:15px; float:right; padding:0px 26px;
+    -webkit-border-radius:15px;}
