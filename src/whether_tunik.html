@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Погода в городе Мариуполе </title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div class="login_back">
+    <h1>Погода в Мариуполе</h1>
+    <!--<div style="clear:both; height:25px;"></div>-->
+    <div class="login_c">
+        <span class="login_email">Нажмите кнопку и узнайте погоду в городе Мариуполе<br><br></span>
+        <span class="citata_1">Температура:</span>
+        <span id="temper_min" class="citata"></span><br>
+        <!--<div style="clear:both; height:20px;"></div>-->
+
+        <span class="citata_1">Атмосферное давление:</span>
+        <span id="atm" class="citata"></span><br>
+
+        <span class="citata_1">Влажность:</span>
+        <span id="vl" class="citata"></span><br>
+
+        <span class="citata_1">Скорость ветра:</span>
+        <span id="speed" class="citata"></span><br>
+
+        <div style="clear:both; height:20px;"></div>
+        <button id="but" class="but_send" type="button">Узнать</button>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    var button = document.getElementById('but');
+
+    button.onclick = function() {
+        //Отправка запроса на сервер
+
+        var xhr = new XMLHttpRequest();
+        var url = 'http://api.openweathermap.org/data/2.5/weather?q=mariupol&appid=a831184e8371369d0ccf1832429d980f&units=metric';
+        xhr.open("GET", url, false);
+        xhr.onload = function(){
+            var obj = JSON.parse(xhr.responseText);
+
+            document.getElementById('temper_min').innerHTML = obj.main.temp_min;
+            document.getElementById('atm').innerHTML = obj.main.pressure;
+            document.getElementById('vl').innerHTML = obj.main.humidity;
+            document.getElementById('speed').innerHTML = obj.wind.speed;
+        };
+        xhr.send();
+
+    };
+
+</script>
+
+
+</body>
+</html>
